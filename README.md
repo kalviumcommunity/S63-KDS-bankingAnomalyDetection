@@ -137,7 +137,6 @@ This usually gives better practical performance than using one method alone.
 4. Start with statistical baseline and compare with Isolation Forest/LOF.
 5. Rank and route alerts to investigators with clear explanations.
 6. Feed confirmed outcomes back into model/rule updates.
-
 ---
 
 If needed, the next step is to convert this into an implementation checklist with data schema, model evaluation protocol, and alert-threshold policy.
