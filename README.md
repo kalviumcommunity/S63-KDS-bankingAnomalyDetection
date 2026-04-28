@@ -1,6 +1,43 @@
 # Fraud Detection System Design
 
-This document explains how to design a practical banking fraud detection system using the **Question -> Data -> Insight** lifecycle.
+This repository is currently a **project blueprint**, not a finished implementation. Its purpose is to define how a banking fraud detection system could be designed using the **Question -> Data -> Insight** lifecycle before moving into code, experiments, and deployment.
+
+## Current Repository Status
+
+At the moment, this repository contains only the project `README`. There are currently no:
+
+- data files
+- notebooks
+- source code
+- model artifacts
+- tests
+- dependency files
+- pipeline or deployment components
+
+That means this repo should be treated as a **design and planning document** for a future anomaly detection project, not as a production-ready or research-complete fraud detection system.
+
+## Project Overview
+
+### Problem
+
+Banking fraud is often hidden inside very large transaction streams. Suspicious behavior may not look obviously fraudulent in isolation, but can become clear when compared against a customer's usual behavior, recent transaction velocity, device changes, location changes, or peer-group patterns.
+
+### Project Type
+
+This is an **anomaly detection** project for fraud analytics. Depending on the available data, it may later evolve into:
+
+- unsupervised anomaly detection
+- semi-supervised fraud detection
+- supervised fraud classification
+
+### End Goal
+
+The expected outcome is a system that can:
+
+- flag suspicious transactions or accounts early
+- rank alerts by risk
+- support fraud investigators with explainable signals
+- reduce fraud losses while controlling false positives
 
 ## 1) Define the Data Science Question
 
@@ -137,6 +174,126 @@ This usually gives better practical performance than using one method alone.
 4. Start with statistical baseline and compare with Isolation Forest/LOF.
 5. Rank and route alerts to investigators with clear explanations.
 6. Feed confirmed outcomes back into model/rule updates.
----
 
-If needed, the next step is to convert this into an implementation checklist with data schema, model evaluation protocol, and alert-threshold policy.
+## 7) Repository Gaps
+
+The current repository has major gaps between design and execution.
+
+### What is Missing
+
+- No dataset description or schema
+- No sample or synthetic data
+- No notebook for EDA
+- No preprocessing pipeline
+- No feature engineering code
+- No model training script
+- No evaluation framework
+- No environment setup (`requirements.txt`, `pyproject.toml`, etc.)
+- No tests
+- No deployment or inference design
+
+### Why This Matters
+
+Without these components:
+
+- the project cannot be run
+- the methods in this README cannot be validated
+- no claims about performance can be tested
+- a new contributor cannot reproduce or extend the work
+
+## 8) Suggested Project Structure
+
+To turn this into a real data science repository, a minimal structure should look like:
+
+```text
+data/
+  raw/
+  processed/
+notebooks/
+src/
+  data/
+  features/
+  models/
+  evaluation/
+configs/
+tests/
+README.md
+requirements.txt
+```
+
+### Lifecycle Mapping
+
+- `data/raw/` -> data collection and source snapshots
+- `data/processed/` -> cleaned and feature-ready data
+- `notebooks/` -> exploratory analysis and experimentation
+- `src/data/` -> ingestion and cleaning logic
+- `src/features/` -> feature engineering
+- `src/models/` -> anomaly detection and training code
+- `src/evaluation/` -> metrics, validation, thresholding
+- `configs/` -> parameters, paths, model settings
+- `tests/` -> reproducibility and regression checks
+
+## 9) Assumptions and Limitations
+
+This design assumes:
+
+- transaction-level data is available and joinable across systems
+- key context fields such as device, location, and authentication signals exist
+- customer behavior is stable enough to define a meaningful baseline
+- anomalies are useful fraud indicators
+
+Important limitations:
+
+- anomaly does not automatically mean fraud
+- fraud labels may be delayed, incomplete, or biased
+- rare legitimate behavior may be flagged as suspicious
+- different fraud types require different features and thresholds
+- no empirical results exist yet in this repository
+
+## 10) Quality Assessment
+
+### Documentation
+
+The documentation is useful for framing the problem, but weak for implementation because it does not explain how to run, test, or validate anything.
+
+### Reproducibility
+
+Reproducibility is currently absent because there is no code, environment file, dataset, or example pipeline.
+
+### Scalability
+
+Scalability cannot yet be assessed in practice. The methods listed here may scale, but the repository has no working system to evaluate.
+
+## 11) Improvement Priorities
+
+The most important next steps are:
+
+1. Add a proper repository structure.
+2. Define the dataset schema and fraud labels clearly.
+3. Create a baseline EDA notebook.
+4. Build one reproducible anomaly detection baseline such as Isolation Forest.
+5. Add an evaluation protocol with thresholds, alert volume limits, and fraud capture metrics.
+
+## 12) Contribution Guide
+
+### Where a Beginner Should Start
+
+Start with this `README`, then set up the missing project structure and baseline workflow.
+
+### Safe Areas to Modify
+
+- `README.md`
+- new folders such as `notebooks/`, `src/`, `tests/`, and `configs/`
+- future baseline experiments and documentation
+
+### What Should Not Be Changed Carelessly
+
+- the problem definition
+- fraud evaluation criteria
+- assumptions about labels and alerting without documenting why
+
+### Good First Contributions
+
+1. Add a reproducible EDA notebook using synthetic or public transaction-like data.
+2. Add a baseline anomaly detection pipeline with feature generation and evaluation.
+3. Add dependency management and project setup files so the repository can actually run.
