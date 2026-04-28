@@ -297,3 +297,155 @@ Start with this `README`, then set up the missing project structure and baseline
 1. Add a reproducible EDA notebook using synthetic or public transaction-like data.
 2. Add a baseline anomaly detection pipeline with feature generation and evaluation.
 3. Add dependency management and project setup files so the repository can actually run.
+
+## Python and Anaconda Setup
+
+### System Information
+
+- **Operating System:** Windows
+- **Shell Used:** Command Prompt or PowerShell
+- **Python (verified):** Python 3.14.4
+- **Anaconda/Conda (verified):** Not detected in this terminal (not installed or not on PATH)
+- **Target Conda version (recommended):** conda 26.3.1 (latest stable as of 2026-04)
+
+### Python Installation & Verification
+
+- Install Python on Windows.
+- Open Command Prompt or PowerShell.
+- Run:
+
+```bash
+python --version
+```
+
+- Expected output:
+
+```bash
+Python 3.14.4
+```
+
+- Start Python interpreter:
+
+```bash
+python
+```
+
+- Expected output:
+
+```bash
+Python 3.14.4 (default, ...)
+[MSC v.**** 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>>
+```
+
+- Exit interpreter:
+
+```bash
+exit()
+```
+
+### Anaconda Installation & Setup
+
+- Install Anaconda for Windows.
+- Open Anaconda Prompt, Command Prompt, or PowerShell.
+- Verify Conda installation:
+
+```bash
+conda --version
+```
+
+- Expected output (after installation):
+
+```bash
+conda 26.3.1
+```
+
+- Check Conda environment access:
+
+```bash
+conda activate
+```
+
+- Expected result:
+
+```bash
+(base)
+```
+
+- Confirm Python inside Conda:
+
+```bash
+python --version
+```
+
+- Expected output:
+
+```bash
+Python 3.x.x
+```
+
+### Environment Validation
+
+- Verify Python is available:
+
+```bash
+python --version
+```
+
+- Verify Conda is available:
+
+```bash
+conda --version
+```
+
+- Open Python from the active Conda environment:
+
+```bash
+python
+```
+
+- Expected confirmation:
+
+```bash
+>>>
+```
+
+- Exit Python:
+
+```bash
+exit()
+```
+
+### Commands & Outputs (Proof)
+
+```bash
+python --version
+Python 3.14.4
+
+conda --version
+conda : The term 'conda' is not recognized as the name of a cmdlet, function, script file, or operable program.
+
+conda activate
+conda : The term 'conda' is not recognized as the name of a cmdlet, function, script file, or operable program.
+
+python
+Python 3.14.4 (default, ...)
+>>>
+```
+
+### Conclusion
+
+- Python is installed and accessible from the terminal.
+- Conda was **not available** in the current terminal session (Anaconda/Miniconda not installed or PATH not configured).
+- After installing Anaconda/Miniconda, `conda --version` and `conda activate` should work as shown above.
+
+### Final Checklist
+
+- [ ] Windows system is available
+- [ ] `python --version` runs successfully
+- [ ] Anaconda/Miniconda is installed
+- [ ] `conda --version` runs successfully
+- [ ] `conda activate` shows `(base)`
+- [ ] `python` opens the interpreter
+- [ ] `exit()` closes the interpreter
