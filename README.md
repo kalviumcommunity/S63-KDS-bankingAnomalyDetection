@@ -890,3 +890,80 @@ int("10") + 5 = 15
 **Difference summary (1:35 - 2:00)**
 "Numeric types are for calculations, string types are for text. Type conversion is important when moving between display output and arithmetic operations."
 
+## PR Section: Lists, Tuples, and Dictionaries in Python
+
+### Script Location
+
+- `data_structures_demo.py` (project root)
+
+### What the Script Demonstrates
+
+- **List:** create, access, modify, add, and remove elements
+- **Tuple:** create, access elements, and show immutability behavior
+- **Dictionary:** create key-value pairs, access values, update existing key, and add new key
+
+### Code Snapshot
+
+```python
+# List
+names = ["Asha", "Ravi", "Meera"]
+print(names[0])       # access
+names[1] = "Rohan"    # modify
+names.append("Nina")  # add
+names.pop(0)          # remove
+
+# Tuple
+coordinates = (10.5, 20.3)
+print(coordinates[0])  # access
+# coordinates[0] = 99.9  # TypeError (immutable)
+
+# Dictionary
+student = {"name": "Asha", "age": 20, "course": "Data Science"}
+print(student["name"])  # access
+student["age"] = 21     # update
+student["city"] = "Pune"  # add new key
+```
+
+### Expected Output
+
+```text
+List Demo
+---------
+Original list: ['Asha', 'Ravi', 'Meera']
+First element: Asha
+After modify/add/remove: ['Rohan', 'Meera', 'Nina']
+Removed element: Asha
+
+Tuple Demo
+----------
+Tuple value: (10.5, 20.3)
+First coordinate: 10.5
+Attempted change: coordinates[0] = 99.9 -> TypeError (tuple is immutable)
+
+Dictionary Demo
+---------------
+Original dictionary: {'name': 'Asha', 'age': 20, 'course': 'Data Science'}
+Student name: Asha
+Updated dictionary: {'name': 'Asha', 'age': 21, 'course': 'Data Science', 'city': 'Pune'}
+```
+
+### Difference and Use Cases (Short)
+
+- **List (mutable):** use when items may change (add/remove/update).
+- **Tuple (immutable):** use for fixed values (coordinates, constants).
+- **Dictionary (key-value):** use when data needs labels (student/product details).
+
+### 2-Minute Video Script (List, Tuple, Dictionary)
+
+**List operations (0:00 - 0:40)**
+"I start with a list of names, access the first value, then modify one item, append a new name, and remove one element. This shows list mutability in practice."
+
+**Tuple immutability (0:40 - 1:15)**
+"Next, I create a tuple for coordinates and access an element. I also explain that changing a tuple element causes a TypeError because tuples are immutable."
+
+**Dictionary usage (1:15 - 1:45)**
+"Then I create a dictionary for student info, access values using keys, update the age, and add a new city key."
+
+**Difference summary (1:45 - 2:00)**
+"List is mutable, tuple is immutable, and dictionary stores labeled key-value data. Each is used based on whether data changes and whether labels are needed."
+
