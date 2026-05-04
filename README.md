@@ -809,3 +809,84 @@ Lowest Score: 68
 **Why scripts are useful (1:35 - 2:00)**
 "Scripts are useful for repeatable analysis tasks and automation. Unlike notebooks, scripts run consistently from terminal and are easier to include in production-style workflows."
 
+## PR Section: Numeric and String Data Types in Python
+
+### Script Location
+
+- `data_types_demo.py` (project root)
+
+### Numeric vs String Types (Short)
+
+- **Numeric types (`int`, `float`)** are used for arithmetic.
+- **String type (`str`)** is used for text values and concatenation.
+
+### Code Snippets
+
+```python
+age = 21
+height = 5.7
+print(type(age))      # <class 'int'>
+print(type(height))   # <class 'float'>
+print(age + 4)        # 25
+print(age / 2)        # 10.5
+```
+
+```python
+first_name = "Data"
+last_name = "Student"
+full_name = first_name + " " + last_name
+print(full_name)      # Data Student
+```
+
+```python
+# Common mistake:
+# "Age: " + age   -> TypeError (str + int)
+
+# Correct conversion:
+print("Age: " + str(age))
+print(int("10") + 5)
+```
+
+### Expected Output
+
+```text
+Numeric Examples
+----------------
+age = 21 | type: <class 'int'>
+height = 5.7 | type: <class 'float'>
+total_points = 25
+half_age = 10.5
+
+String Examples
+---------------
+first_name = Data | type: <class 'str'>
+full_name = Data Student
+
+Mixing Types
+------------
+Common mistake: trying to add string + int directly
+Example error: "Age: " + age -> TypeError
+Correct conversion: Age: 21
+int("10") + 5 = 15
+```
+
+### Common Mistake (Mixing Types)
+
+- Directly combining string and integer causes `TypeError`.
+- Convert numeric to string with `str()` for text output.
+- Convert numeric text to number with `int()` when calculation is needed.
+
+### 2-Minute Video Script (Numeric vs String)
+
+**Numeric examples (0:00 - 0:35)**
+"I start with numeric variables like `age` as an integer and `height` as a float. I run addition and division to show arithmetic behavior."
+
+**String examples (0:35 - 1:05)**
+"Next, I create two string variables and concatenate them to form a full name. This shows how strings are used for text operations."
+
+**Type conversion (1:05 - 1:35)**
+"Then I show a common mistake: mixing string and integer directly causes a TypeError. I fix it using `str(age)`. I also convert text to number using `int(\"10\")`."
+
+**Difference summary (1:35 - 2:00)**
+"Numeric types are for calculations, string types are for text. Type conversion is important when moving between display output and arithmetic operations."
+
