@@ -611,3 +611,75 @@ Expected output:
 **Why Markdown matters (1:45 - 2:00)**
 "Markdown keeps notebooks readable and professional. It separates explanation from execution, which improves clarity in PR submissions."
 
+## PR Section: Data Science Project Folder Structure
+
+### Recommended Structure
+
+```text
+project-name/
+│── data/
+│   ├── raw/
+│   └── processed/
+│── notebooks/
+│── src/
+│── outputs/
+│   ├── figures/
+│   └── reports/
+│── README.md
+```
+
+### Folder Purpose (What + Why)
+
+- `data/raw/`
+  - **Stores:** Original source files exactly as collected.
+  - **Why:** Keeps source data unchanged for traceability and reproducibility.
+
+- `data/processed/`
+  - **Stores:** Cleaned or transformed datasets ready for analysis/modeling.
+  - **Why:** Separates preprocessing results from original raw files.
+
+- `notebooks/`
+  - **Stores:** Jupyter notebooks for EDA, experiments, and quick validation.
+  - **Why:** Keeps exploratory work organized and separate from reusable code.
+
+- `src/`
+  - **Stores:** Reusable Python scripts/modules (data prep, features, training, evaluation).
+  - **Why:** Prevents logic duplication and improves maintainability.
+
+- `outputs/figures/`
+  - **Stores:** Charts, plots, and visual artifacts.
+  - **Why:** Central place for visual results used in reports and PRs.
+
+- `outputs/reports/`
+  - **Stores:** Summaries, findings, and final project documents.
+  - **Why:** Keeps communication artifacts separate from code and data.
+
+- `README.md`
+  - **Stores:** Project overview, structure, and usage notes.
+  - **Why:** First reference point for reviewers and collaborators.
+
+### Best Practices
+
+- Do not edit files inside `data/raw/` after ingestion.
+- Use clear, relative paths (avoid hardcoded local machine paths).
+- Keep code in `src/`, not inside notebooks only.
+- Save final visuals in `outputs/figures/` and summaries in `outputs/reports/`.
+- Keep folder names simple and lowercase for consistency.
+
+### 2-Minute Video Script (Folder Structure)
+
+**Root overview (0:00 - 0:25)**
+"This is my data science project root. It keeps data, notebooks, source code, and outputs clearly separated for clean workflow and easier review."
+
+**Data folders (0:25 - 0:55)**
+"Inside `data`, I use `raw` for original source files and `processed` for cleaned versions. This avoids accidental overwrites and keeps preprocessing steps reproducible."
+
+**Work folders (0:55 - 1:25)**
+"`notebooks` is for exploratory analysis and experiment notes. `src` is for reusable scripts and functions. This separation keeps experiments and production-style code organized."
+
+**Output folders (1:25 - 1:45)**
+"`outputs/figures` stores plots, and `outputs/reports` stores written findings. This makes final artifacts easy to find during PR review."
+
+**Collaboration value (1:45 - 2:00)**
+"This structure helps collaboration because every contributor knows where data, code, and results belong, reducing confusion and merge issues."
+
