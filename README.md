@@ -750,3 +750,62 @@ project-name/
 **Risks of mixing stages (1:25 - 2:00)**
 "If stages are mixed, source data can be overwritten, outputs become hard to trace, and debugging becomes difficult. Keeping a one-directional flow from raw to processed to outputs avoids these issues."
 
+## PR Section: Basic Python Analysis Script
+
+### Script Location
+
+- `analysis.py` (project root)
+
+### What the Script Does
+
+- Defines simple variables and sample data.
+- Uses a list and dictionary.
+- Calculates total, average, highest, and lowest values.
+- Prints a clear data summary in terminal output.
+
+### Run Command
+
+```bash
+python analysis.py
+```
+
+### Expected Output
+
+```text
+Basic Analysis Summary
+----------------------
+Class: data_science_basics
+Student Count: 5
+Scores: [72, 85, 90, 68, 95]
+Total Score: 410
+Average Score: 82.00
+Highest Score: 95
+Lowest Score: 68
+```
+
+### Script vs Notebook (Practical Difference)
+
+- **Script (`.py`)**
+  - Best for repeatable execution from terminal.
+  - Good for automation and shared workflows.
+  - Output is linear and easy to version in code reviews.
+
+- **Notebook (`.ipynb`)**
+  - Best for interactive exploration and step-by-step analysis.
+  - Useful for combining notes, code, and outputs in one place.
+  - Better for experimentation, less ideal for repeated automation.
+
+### 2-Minute Video Script (analysis.py)
+
+**Show script file (0:00 - 0:35)**
+"This is `analysis.py` in the project root. It contains simple sample data, basic calculations, and clear print statements for a small analysis summary."
+
+**Run script in terminal (0:35 - 1:05)**
+"I run the script using `python analysis.py`. The script executes directly in terminal and prints the summary output."
+
+**Explain output (1:05 - 1:35)**
+"The output shows class name, student count, score list, total score, average, highest, and lowest score. This confirms the script logic and formatting are working."
+
+**Why scripts are useful (1:35 - 2:00)**
+"Scripts are useful for repeatable analysis tasks and automation. Unlike notebooks, scripts run consistently from terminal and are easier to include in production-style workflows."
+
