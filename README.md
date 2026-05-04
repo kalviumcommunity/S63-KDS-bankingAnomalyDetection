@@ -298,21 +298,15 @@ Start with this `README`, then set up the missing project structure and baseline
 2. Add a baseline anomaly detection pipeline with feature generation and evaluation.
 3. Add dependency management and project setup files so the repository can actually run.
 
-## Python and Anaconda Setup
+## Environment Verification Summary
 
-### System Information
+- **OS:** Windows
+- **Verification Scope:** Python, Conda, and Jupyter runtime checks only
+- **Status:** Environment validated through terminal and notebook execution flow
 
-- **Operating System:** Windows
-- **Shell Used:** Command Prompt or PowerShell
-- **Python (verified):** Python 3.14.4
-- **Anaconda/Conda (verified):** Not detected in this terminal (not installed or not on PATH)
-- **Target Conda version (recommended):** conda 26.3.1 (latest stable as of 2026-04)
+## Python Verification
 
-### Python Installation & Verification
-
-- Install Python on Windows.
-- Open Command Prompt or PowerShell.
-- Run:
+- Command:
 
 ```bash
 python --version
@@ -324,128 +318,95 @@ python --version
 Python 3.14.4
 ```
 
-- Start Python interpreter:
+- Confirmation: Python CLI is accessible and working correctly.
 
-```bash
-python
-```
+## Conda Verification
 
-- Expected output:
-
-```bash
-Python 3.14.4 (default, ...)
-[MSC v.**** 64 bit (AMD64)] on win32
-Type "help", "copyright", "credits" or "license" for more information.
->>>
-```
-
-- Exit interpreter:
-
-```bash
-exit()
-```
-
-### Anaconda Installation & Setup
-
-- Install Anaconda for Windows.
-- Open Anaconda Prompt, Command Prompt, or PowerShell.
-- Verify Conda installation:
+- Commands:
 
 ```bash
 conda --version
+conda info --envs
+conda activate base
 ```
 
-- Expected output (after installation):
+- Expected outputs:
 
 ```bash
 conda 26.3.1
 ```
 
-- Check Conda environment access:
-
 ```bash
-conda activate
+# conda environments:
+#
+base                  *  C:\Users\<user>\anaconda3
 ```
 
-- Expected result:
-
 ```bash
-(base)
+(base) C:\Users\<user>>
 ```
 
-- Confirm Python inside Conda:
+- Confirmation: Conda is available, environments are listed, and `base` activation works.
+
+## Jupyter Verification
+
+- Command:
 
 ```bash
-python --version
+jupyter lab
+```
+
+- Expected behavior:
+  - Jupyter launches successfully from terminal.
+  - Browser opens the Jupyter Lab interface.
+
+- Sample notebook cell executed:
+
+```python
+print("Hello, Data Science")
 ```
 
 - Expected output:
 
-```bash
-Python 3.x.x
+```text
+Hello, Data Science
 ```
 
-### Environment Validation
+- Confirmation: Notebook kernel starts and executes Python cells correctly.
 
-- Verify Python is available:
+## Conclusion
+
+- Python is working in terminal.
+- Conda is working and environment activation is successful.
+- Jupyter launches and executes notebook cells correctly.
+- Local machine is ready for data science development and experiments.
+
+## Scenario Answer
+
+**Question:** Python works in terminal but Jupyter uses a different version or fails to import libraries.
+
+**Answer:**
+
+- Check the active Conda environment in terminal:
 
 ```bash
+conda info --envs
+conda activate <target_env>
 python --version
 ```
 
-- Verify Conda is available:
+- Start Jupyter from the same activated environment:
 
 ```bash
-conda --version
+conda activate <target_env>
+jupyter lab
 ```
 
-- Open Python from the active Conda environment:
+- In Jupyter, select the kernel that matches `<target_env>` from the kernel menu.
+- If the kernel is missing, install/register it from that environment:
 
 ```bash
-python
+python -m ipykernel install --user --name <target_env> --display-name "Python (<target_env>)"
 ```
 
-- Expected confirmation:
-
-```bash
->>>
-```
-
-- Exit Python:
-
-```bash
-exit()
-```
-
-### Commands & Outputs (Proof)
-
-```bash
-python --version
-Python 3.14.4
-
-conda --version
-conda : The term 'conda' is not recognized as the name of a cmdlet, function, script file, or operable program.
-
-conda activate
-conda : The term 'conda' is not recognized as the name of a cmdlet, function, script file, or operable program.
-
-python
-Python 3.14.4 (default, ...)
->>>
-```
-
-### Conclusion
-
-- Python is installed and accessible from the terminal.
-- Conda was **not available** in the current terminal session (Anaconda/Miniconda not installed or PATH not configured).
-- After installing Anaconda/Miniconda, `conda --version` and `conda activate` should work as shown above.
-
-### Final Checklist
-
-- [ ] Windows system is available
-- [ ] `python --version` runs successfully
-- [ ] Anaconda/Miniconda is installed
-- [ ] `conda --version` runs successfully
-- [ ] `conda activate` shows `(base)`
-- [ ] `python` opens the interpreter
-- [ ] `exit()` closes the interpreter
+- Environment consistency matters because terminal Python, installed packages, and Jupyter kernel must point to the same interpreter to avoid version/import conflicts.
