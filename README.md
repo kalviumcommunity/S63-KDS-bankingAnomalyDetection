@@ -531,3 +531,83 @@ while True:
 **Difference summary (1:50 - 2:00)**
 "Interrupt stops the current running cell. Restart resets the full kernel state. Both are essential for clean and controlled notebook execution."
 
+## PR Section: Markdown Headings, Lists, and Code Blocks (Notebook Proof)
+
+### Notebook File
+
+- `Jupyter_Markdown_Formatting_Demo.ipynb`
+
+### Markdown Elements Demonstrated
+
+- **Main Markdown title** using `#`
+- **Subheadings** using `##` and `###`
+- **Unordered list** using `-`
+- **Ordered list** using numbered steps
+- **Inline code** such as `print()`
+- **Code block inside Markdown** using triple backticks
+
+### Notebook Flow (Submission Structure)
+
+- **Markdown cell:** purpose and formatted content
+- **Code cell:** simple Python execution
+- **Markdown cell:** output explanation
+
+### Cell Snapshot
+
+**Markdown cell**
+
+```markdown
+# Markdown Formatting Demo for PR Submission
+
+## Purpose
+This notebook demonstrates proper Markdown usage in Jupyter for headings, lists, inline code, and code blocks.
+
+### Key Items Covered
+- Main title and section subheadings
+- Unordered and ordered lists
+- Inline code such as `print()`
+- Code block formatting in Markdown
+
+### Steps Followed
+1. Create Markdown cell and add structured content.
+2. Add a simple Code cell and run it.
+3. Add Markdown output explanation.
+
+### Markdown Code Block Example
+```python
+name = "Data Science"
+print("Hello", name)
+```
+```
+
+**Code cell**
+
+```python
+message = "Markdown + Code flow is working"
+print(message)
+```
+
+**Markdown output explanation**
+
+```markdown
+Expected output:
+- `Markdown + Code flow is working`
+```
+
+### 2-Minute Video Script (Markdown Formatting)
+
+**Creating Markdown cell (0:00 - 0:30)**
+"I start by creating a Markdown cell and adding a main title and subheadings to organize the notebook clearly."
+
+**Writing headings and lists (0:30 - 1:00)**
+"Next, I add an unordered list for key points and an ordered list for steps. This makes the notebook easy to follow during review."
+
+**Adding inline code and code block (1:00 - 1:25)**
+"I include inline code like `print()` inside text, and then add a fenced code block in Markdown to show formatted sample code."
+
+**Switching between Markdown and Code (1:25 - 1:45)**
+"I switch from Markdown to a Code cell, run a simple print statement, and then switch back to Markdown for output explanation."
+
+**Why Markdown matters (1:45 - 2:00)**
+"Markdown keeps notebooks readable and professional. It separates explanation from execution, which improves clarity in PR submissions."
+
