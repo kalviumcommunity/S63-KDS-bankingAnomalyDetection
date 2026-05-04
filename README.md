@@ -683,3 +683,129 @@ project-name/
 **Collaboration value (1:45 - 2:00)**
 "This structure helps collaboration because every contributor knows where data, code, and results belong, reducing confusion and merge issues."
 
+## PR Section: Data Organization (Raw vs Processed vs Outputs)
+
+### Recommended Structure
+
+```text
+project-name/
+│── data/
+│   ├── raw/
+│   └── processed/
+│── outputs/
+│   ├── figures/
+│   ├── reports/
+│   └── models/
+```
+
+### Folder Meaning
+
+- `data/raw/`
+  - Original source files exactly as received.
+  - Read-only zone; never edit these files directly.
+
+- `data/processed/`
+  - Cleaned, transformed, and analysis-ready files.
+  - Built from raw data through preprocessing steps.
+
+- `outputs/figures/`
+  - Generated visual artifacts (charts, plots, dashboards exports).
+
+- `outputs/reports/`
+  - Generated written summaries and final documents.
+
+- `outputs/models/`
+  - Generated trained model artifacts and saved model files.
+
+### Data Flow Rules
+
+- Never modify files in `data/raw/`.
+- Always read from `data/raw/`.
+- Always write cleaned results to `data/processed/`.
+- Always write generated artifacts to `outputs/`.
+- Maintain one-directional flow: `raw -> processed -> outputs`.
+
+### File Examples
+
+- `data/raw/original.csv`
+- `data/processed/cleaned_data.csv`
+- `outputs/figures/plot.png`
+- `outputs/reports/report.pdf`
+- `outputs/models/model.pkl`
+
+### Why Separation Matters
+
+- Prevents accidental overwrite of source data.
+- Keeps transformations traceable and reproducible.
+- Makes collaboration easier because each stage has a fixed location.
+
+### 2-Minute Video Script (Data Organization)
+
+**Folder walkthrough (0:00 - 0:45)**
+"This project separates data into clear stages. `data/raw` holds original files, `data/processed` holds cleaned files, and `outputs` stores generated results like figures, reports, and models."
+
+**Why separation matters (0:45 - 1:25)**
+"I treat `raw` as read-only. All transformations happen into `processed`, and all final artifacts go to `outputs`. This makes the pipeline clean, reproducible, and easy to review in PRs."
+
+**Risks of mixing stages (1:25 - 2:00)**
+"If stages are mixed, source data can be overwritten, outputs become hard to trace, and debugging becomes difficult. Keeping a one-directional flow from raw to processed to outputs avoids these issues."
+
+## PR Section: Basic Python Analysis Script
+
+### Script Location
+
+- `analysis.py` (project root)
+
+### What the Script Does
+
+- Defines simple variables and sample data.
+- Uses a list and dictionary.
+- Calculates total, average, highest, and lowest values.
+- Prints a clear data summary in terminal output.
+
+### Run Command
+
+```bash
+python analysis.py
+```
+
+### Expected Output
+
+```text
+Basic Analysis Summary
+----------------------
+Class: data_science_basics
+Student Count: 5
+Scores: [72, 85, 90, 68, 95]
+Total Score: 410
+Average Score: 82.00
+Highest Score: 95
+Lowest Score: 68
+```
+
+### Script vs Notebook (Practical Difference)
+
+- **Script (`.py`)**
+  - Best for repeatable execution from terminal.
+  - Good for automation and shared workflows.
+  - Output is linear and easy to version in code reviews.
+
+- **Notebook (`.ipynb`)**
+  - Best for interactive exploration and step-by-step analysis.
+  - Useful for combining notes, code, and outputs in one place.
+  - Better for experimentation, less ideal for repeated automation.
+
+### 2-Minute Video Script (analysis.py)
+
+**Show script file (0:00 - 0:35)**
+"This is `analysis.py` in the project root. It contains simple sample data, basic calculations, and clear print statements for a small analysis summary."
+
+**Run script in terminal (0:35 - 1:05)**
+"I run the script using `python analysis.py`. The script executes directly in terminal and prints the summary output."
+
+**Explain output (1:05 - 1:35)**
+"The output shows class name, student count, score list, total score, average, highest, and lowest score. This confirms the script logic and formatting are working."
+
+**Why scripts are useful (1:35 - 2:00)**
+"Scripts are useful for repeatable analysis tasks and automation. Unlike notebooks, scripts run consistently from terminal and are easier to include in production-style workflows."
+
