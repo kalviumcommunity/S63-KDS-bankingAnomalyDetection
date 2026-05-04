@@ -438,3 +438,96 @@ Use Code cells for Python execution and results.
 **Second code example and interpretation (1:35 - 2:00)**
 "I run a second Code cell for simple math, then add a Markdown cell to explain the output. This is the expected submission pattern: explanation, code, then interpretation."
 
+## PR Section: Kernel Control Proof
+
+### Running Cells & Execution Order
+
+- Cell 1 (run first):
+
+```python
+x = 10
+print("x =", x)
+```
+
+- Expected output:
+
+```text
+x = 10
+```
+
+- Cell 2 (depends on Cell 1):
+
+```python
+print("x + 5 =", x + 5)
+```
+
+- Expected output:
+
+```text
+x + 5 = 15
+```
+
+- If Cell 2 is run before Cell 1, expected error:
+
+```python
+print(x)
+```
+
+```text
+NameError: name 'x' is not defined
+```
+
+### Restarting the Kernel
+
+- Action: **Kernel -> Restart Kernel**, then run:
+
+```python
+print(x)
+```
+
+- Expected outcome after restart:
+
+```text
+NameError: name 'x' is not defined
+```
+
+- Proof point: Restart clears variables and execution state.
+
+### Interrupting Execution
+
+- Run this cell:
+
+```python
+while True:
+    pass
+```
+
+- Action: **Kernel -> Interrupt Kernel**
+- Expected outcome: cell stops running and kernel becomes responsive again.
+
+### When to Use Restart vs Interrupt
+
+- Use **Interrupt** when one cell is stuck (infinite loop/long run) and you want to stop only current execution.
+- Use **Restart** when notebook state is inconsistent or you need a clean run from the top.
+
+### Conclusion
+
+- Cell execution depends on order.
+- Kernel restart clears memory (variables are removed).
+- Kernel interrupt safely stops a running cell.
+- Kernel control basics are verified for notebook workflow.
+
+### 2-Minute Video Script (Kernel Run/Restart/Interrupt)
+
+**Running cells (0:00 - 0:40)**
+"I first run a cell that defines `x = 10`, then run a second cell that uses `x`. The output is correct, showing execution order is working. If I run the second cell first, I get a NameError, which proves cell dependency."
+
+**Restarting kernel (0:40 - 1:20)**
+"Now I restart the kernel from the Kernel menu. After restart, I run `print(x)` again and get `NameError: name 'x' is not defined`. This confirms restart clears all previously stored variables."
+
+**Interrupting execution (1:20 - 1:50)**
+"Next, I run an infinite loop with `while True: pass`. The notebook keeps running, so I use Kernel -> Interrupt Kernel. Execution stops immediately and the notebook is responsive again."
+
+**Difference summary (1:50 - 2:00)**
+"Interrupt stops the current running cell. Restart resets the full kernel state. Both are essential for clean and controlled notebook execution."
+
