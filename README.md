@@ -298,115 +298,59 @@ Start with this `README`, then set up the missing project structure and baseline
 2. Add a baseline anomaly detection pipeline with feature generation and evaluation.
 3. Add dependency management and project setup files so the repository can actually run.
 
-## Environment Verification Summary
+## 1. Launching Jupyter Notebook
 
-- **OS:** Windows
-- **Verification Scope:** Python, Conda, and Jupyter runtime checks only
-- **Status:** Environment validated through terminal and notebook execution flow
-
-## Python Verification
-
-- Command:
+- Run from terminal:
 
 ```bash
-python --version
-```
-
-- Expected output:
-
-```bash
-Python 3.14.4
-```
-
-- Confirmation: Python CLI is accessible and working correctly.
-
-## Conda Verification
-
-- Commands:
-
-```bash
-conda --version
-conda info --envs
 conda activate base
+jupyter notebook
 ```
 
-- Expected outputs:
+- Practical verification:
+  - Jupyter opens automatically in the browser.
+  - Notebook home page opens at the directory where the command was run.
 
-```bash
-conda 26.3.1
-```
+## 2. Jupyter Home Interface Overview
 
-```bash
-# conda environments:
-#
-base                  *  C:\Users\<user>\anaconda3
-```
+- **File/folder listing area:** Shows project files and folders.
+- **Navigation breadcrumbs:** Shows current path and allows quick back navigation.
+- **New button:** Creates new notebook files (Python 3 kernel).
+- **File type indicators:** Differentiates folders, notebooks (`.ipynb`), and other files.
 
-```bash
-(base) C:\Users\<user>>
-```
+## 3. Folder Navigation
 
-- Confirmation: Conda is available, environments are listed, and `base` activation works.
+- Open a folder by clicking its name in the listing.
+- Move back by clicking a previous path in breadcrumbs.
+- Always confirm you are in the correct project folder before creating notebooks.
 
-## Jupyter Verification
+## 4. Creating and Running a Notebook
 
-- Command:
-
-```bash
-jupyter lab
-```
-
-- Expected behavior:
-  - Jupyter launches successfully from terminal.
-  - Browser opens the Jupyter Lab interface.
-
-- Sample notebook cell executed:
+- Click **New** -> **Python 3**.
+- A new notebook opens in a new tab.
+- Verify kernel in top-right is **Python 3** (or the expected Conda environment).
+- Run sample cell:
 
 ```python
-print("Hello, Data Science")
+print("Jupyter is working")
 ```
 
 - Expected output:
 
 ```text
-Hello, Data Science
+Jupyter is working
 ```
 
-- Confirmation: Notebook kernel starts and executes Python cells correctly.
+## 5. Notebook Management
 
-## Conclusion
+- Rename: Click notebook title (top) and enter a new name.
+- Save: Press **Ctrl + S** or use **File -> Save and Checkpoint**.
+- Close: **File -> Close and Halt**.
+- Reopen: Return to Jupyter home page and click the notebook filename.
 
-- Python is working in terminal.
-- Conda is working and environment activation is successful.
-- Jupyter launches and executes notebook cells correctly.
-- Local machine is ready for data science development and experiments.
+## 6. Conclusion
 
-## Scenario Answer
+- Jupyter Notebook launches correctly from terminal.
+- Folder and breadcrumb navigation is understood.
+- Notebook creation, kernel verification, and code execution work correctly.
 
-**Question:** Python works in terminal but Jupyter uses a different version or fails to import libraries.
-
-**Answer:**
-
-- Check the active Conda environment in terminal:
-
-```bash
-conda info --envs
-conda activate <target_env>
-python --version
-```
-
-- Start Jupyter from the same activated environment:
-
-```bash
-conda activate <target_env>
-jupyter lab
-```
-
-- In Jupyter, select the kernel that matches `<target_env>` from the kernel menu.
-- If the kernel is missing, install/register it from that environment:
-
-```bash
-python -m ipykernel install --user --name <target_env> --display-name "Python (<target_env>)"
-```
-
-- Environment consistency matters because terminal Python, installed packages, and Jupyter kernel must point to the same interpreter to avoid version/import conflicts.
