@@ -354,3 +354,87 @@ Jupyter is working
 - Folder and breadcrumb navigation is understood.
 - Notebook creation, kernel verification, and code execution work correctly.
 
+## PR Section: Code vs Markdown Cells (Notebook Proof)
+
+### Notebook File
+
+- `Jupyter_Code_vs_Markdown_Demo.ipynb`
+
+### Structure Used
+
+- Markdown cell: title and notebook purpose
+- Markdown cell: explanation before code
+- Code cell: simple Python (`print`)
+- Markdown cell: output explanation
+- Markdown cell: explanation before code
+- Code cell: simple math
+- Markdown cell: output explanation and usage summary
+
+### Cell Content Snapshot
+
+**Markdown (title and purpose)**
+
+```markdown
+# Code vs Markdown Cells Demo
+
+Purpose: Show correct usage of Markdown cells for explanation and Code cells for execution.
+```
+
+**Markdown (before code cell 1)**
+
+```markdown
+This code cell prints a message to verify Python execution in Jupyter.
+```
+
+**Code cell 1**
+
+```python
+print("Hello from a Code cell")
+```
+
+**Markdown (after code cell 1)**
+
+```markdown
+Output shows the text message. This confirms the cell executed correctly.
+```
+
+**Markdown (before code cell 2)**
+
+```markdown
+This code cell performs basic arithmetic and prints the result.
+```
+
+**Code cell 2**
+
+```python
+a = 8
+b = 4
+print("Sum:", a + b)
+print("Product:", a * b)
+```
+
+**Markdown (after code cell 2)**
+
+```markdown
+The output displays Sum: 12 and Product: 32.
+Use Markdown cells for notes, headings, and interpretation.
+Use Code cells for Python execution and results.
+```
+
+### 2-Minute Video Script (Code vs Markdown)
+
+**Intro and notebook setup (0:00 - 0:20)**
+"In this short demo, I show the difference between Markdown and Code cells in Jupyter Notebook using a simple structured flow."
+
+**Creating a Markdown cell (0:20 - 0:45)**
+"I create a Markdown cell first, add a title and purpose, then press Shift + Enter to render it. Markdown is used for headings, explanations, and result notes."
+
+**Creating and running a Code cell (0:45 - 1:15)**
+"Now I create a Code cell, write `print(\"Hello from a Code cell\")`, and run it with Shift + Enter. The output appears below the cell, confirming execution."
+
+**Switching cell types (1:15 - 1:35)**
+"To switch cell types, I use the toolbar dropdown and change between Markdown and Code. This keeps the notebook clean: explanation in Markdown, execution in Code."
+
+**Second code example and interpretation (1:35 - 2:00)**
+"I run a second Code cell for simple math, then add a Markdown cell to explain the output. This is the expected submission pattern: explanation, code, then interpretation."
+
