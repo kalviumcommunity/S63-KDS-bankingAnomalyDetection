@@ -683,3 +683,70 @@ project-name/
 **Collaboration value (1:45 - 2:00)**
 "This structure helps collaboration because every contributor knows where data, code, and results belong, reducing confusion and merge issues."
 
+## PR Section: Data Organization (Raw vs Processed vs Outputs)
+
+### Recommended Structure
+
+```text
+project-name/
+│── data/
+│   ├── raw/
+│   └── processed/
+│── outputs/
+│   ├── figures/
+│   ├── reports/
+│   └── models/
+```
+
+### Folder Meaning
+
+- `data/raw/`
+  - Original source files exactly as received.
+  - Read-only zone; never edit these files directly.
+
+- `data/processed/`
+  - Cleaned, transformed, and analysis-ready files.
+  - Built from raw data through preprocessing steps.
+
+- `outputs/figures/`
+  - Generated visual artifacts (charts, plots, dashboards exports).
+
+- `outputs/reports/`
+  - Generated written summaries and final documents.
+
+- `outputs/models/`
+  - Generated trained model artifacts and saved model files.
+
+### Data Flow Rules
+
+- Never modify files in `data/raw/`.
+- Always read from `data/raw/`.
+- Always write cleaned results to `data/processed/`.
+- Always write generated artifacts to `outputs/`.
+- Maintain one-directional flow: `raw -> processed -> outputs`.
+
+### File Examples
+
+- `data/raw/original.csv`
+- `data/processed/cleaned_data.csv`
+- `outputs/figures/plot.png`
+- `outputs/reports/report.pdf`
+- `outputs/models/model.pkl`
+
+### Why Separation Matters
+
+- Prevents accidental overwrite of source data.
+- Keeps transformations traceable and reproducible.
+- Makes collaboration easier because each stage has a fixed location.
+
+### 2-Minute Video Script (Data Organization)
+
+**Folder walkthrough (0:00 - 0:45)**
+"This project separates data into clear stages. `data/raw` holds original files, `data/processed` holds cleaned files, and `outputs` stores generated results like figures, reports, and models."
+
+**Why separation matters (0:45 - 1:25)**
+"I treat `raw` as read-only. All transformations happen into `processed`, and all final artifacts go to `outputs`. This makes the pipeline clean, reproducible, and easy to review in PRs."
+
+**Risks of mixing stages (1:25 - 2:00)**
+"If stages are mixed, source data can be overwritten, outputs become hard to trace, and debugging becomes difficult. Keeping a one-directional flow from raw to processed to outputs avoids these issues."
+
