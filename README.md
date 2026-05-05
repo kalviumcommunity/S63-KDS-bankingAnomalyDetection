@@ -1051,3 +1051,99 @@ Using 'or': No special approval needed
 Using 'not': ID card is missing
 ```
 
+## PR Section: For and While Loops in Python
+
+### Script Location
+
+- `loops_demo.py` (project root)
+
+### For vs While (Short)
+
+- **for loop:** used when iterating over a known sequence (`range`, list).
+- **while loop:** used when repetition depends on a condition.
+
+### break and continue (Short)
+
+- `break` stops the loop immediately.
+- `continue` skips current iteration and moves to next one.
+
+### Code Snippets
+
+```python
+# for loop with range
+for number in range(1, 6):
+    print(number)
+
+# for loop with list
+names = ["Asha", "Ravi", "Meera"]
+for name in names:
+    print("Name:", name)
+```
+
+```python
+# continue example
+for value in range(1, 6):
+    if value == 3:
+        continue
+    print("Value:", value)
+
+# break example
+for value in range(1, 8):
+    if value == 4:
+        print("Stopping loop at", value)
+        break
+    print("Value:", value)
+```
+
+```python
+# while loop with safe termination
+count = 1
+while count <= 5:
+    print("Count:", count)
+    count += 1
+print("Loop ended safely")
+```
+
+### Expected Output
+
+```text
+Loops Demo
+----------
+1) for loop with range (1 to 5)
+1
+2
+3
+4
+5
+
+2) for loop with list
+Name: Asha
+Name: Ravi
+Name: Meera
+
+3) continue example (skip value 3)
+Value: 1
+Value: 2
+Value: 4
+Value: 5
+
+4) break example (stop at value 4)
+Value: 1
+Value: 2
+Value: 3
+Stopping loop at 4
+
+5) while loop with safe termination
+Count: 1
+Count: 2
+Count: 3
+Count: 4
+Count: 5
+Loop ended safely
+```
+
+### Infinite Loop Note
+
+- A `while` loop can run forever if the condition never becomes false.
+- Avoid this by updating the loop variable (`count += 1`) or using a clear stop condition.
+
