@@ -1202,3 +1202,59 @@ Global variable example: functions_pr_demo
 - `project_name` in the script is a **global variable** (available outside functions).
 - `result` inside `calculate_sum()` is a **local variable** (used only inside that function).
 
+## PR Section: Passing Data into Functions and Returning Results
+
+### Script Location
+
+- `function_return_demo.py` (project root)
+
+### Parameters vs Arguments (Short)
+
+- **Parameters** are placeholders in function definition (example: `a`, `b`, `values`).
+- **Arguments** are actual values passed during function call (example: `10`, `5`, `[80, 90, 70, 100]`).
+
+### Return vs Print (Important)
+
+- `return` sends a value back to the caller for reuse.
+- `print` only displays output; it does not pass value for later calculations.
+- Returning values makes functions reusable in larger logic.
+
+### Code Snippets
+
+```python
+def add_numbers(a, b):
+    return a + b
+
+def calculate_average(values):
+    return sum(values) / len(values)
+```
+
+```python
+sum_1 = add_numbers(10, 5)
+sum_2 = add_numbers(7, 3)
+avg_score = calculate_average([80, 90, 70, 100])
+
+combined_total = sum_1 + sum_2
+final_metric = combined_total * avg_score
+
+print(sum_1, sum_2, avg_score, combined_total, final_metric)
+```
+
+### Expected Output
+
+```text
+Function Parameters and Return Demo
+-----------------------------------
+sum_1 = 15
+sum_2 = 10
+average score = 85.0
+combined_total = 25
+final_metric = 2125.0
+```
+
+### Why Return Improves Reuse
+
+- Returned values can be stored in variables.
+- Stored values can be reused in multiple later calculations.
+- This makes function outputs modular and easy to compose.
+
