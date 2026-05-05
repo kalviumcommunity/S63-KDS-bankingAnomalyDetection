@@ -1258,3 +1258,64 @@ final_metric = 2125.0
 - Stored values can be reused in multiple later calculations.
 - This makes function outputs modular and easy to compose.
 
+## PR Section: Readable Variable Naming and Comments (PEP 8 Basics)
+
+### Script Location
+
+- `pep8_naming_comments_demo.py` (project root)
+
+### Why Readable Variable Names Matter (Short)
+
+- Clear names make code easier to review and maintain.
+- Good naming reduces confusion and prevents logic mistakes.
+
+### snake_case Convention (Short)
+
+- Use lowercase letters with underscores between words.
+- Example: `average_score`, `pass_threshold`, `result_status`.
+
+### Good vs Bad Comments (Short)
+
+- **Bad comments:** repeat obvious code behavior.
+- **Good comments:** explain intent and decisions (why logic exists).
+
+### Before vs After (Code Snapshot)
+
+```python
+# Before: unclear names
+x = 85
+temp = 90
+val = (x + temp) / 2
+print(val)
+```
+
+```python
+# After: clear snake_case names
+math_marks = 85
+science_marks = 90
+
+# Use descriptive names so score meaning is clear in reports.
+average_score = (math_marks + science_marks) / 2
+
+# Keep pass/fail threshold in a named variable to avoid magic numbers.
+pass_threshold = 75
+
+if average_score >= pass_threshold:
+    result_status = "pass"
+else:
+    result_status = "needs_improvement"
+
+print(average_score)
+print(result_status)
+```
+
+### Expected Output
+
+```text
+PEP 8 Naming and Comments Demo
+------------------------------
+Before (unclear names) average = 87.5
+After (clear names) average_score = 87.5
+result_status = pass
+```
+
