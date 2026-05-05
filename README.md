@@ -967,3 +967,87 @@ Updated dictionary: {'name': 'Asha', 'age': 21, 'course': 'Data Science', 'city'
 **Difference summary (1:45 - 2:00)**
 "List is mutable, tuple is immutable, and dictionary stores labeled key-value data. Each is used based on whether data changes and whether labels are needed."
 
+## PR Section: Conditional Statements in Python
+
+### Script Location
+
+- `conditionals_demo.py` (project root)
+
+### What is Covered (Short)
+
+- `if` checks a condition and runs code when it is true.
+- `elif` checks another condition if previous one is false.
+- `else` runs when no earlier condition is true.
+
+### Logical Operators (Short)
+
+- `and` -> all conditions must be true
+- `or` -> at least one condition must be true
+- `not` -> reverses a condition
+
+### Code Snippets
+
+```python
+# Basic if
+num = 7
+if num > 0:
+    print("positive")
+
+# if-else
+temperature = -2
+if temperature >= 0:
+    print("above or equal to 0")
+else:
+    print("below 0")
+```
+
+```python
+# if-elif-else
+marks = 78
+if marks >= 90:
+    grade = "A"
+elif marks >= 75:
+    grade = "B"
+elif marks >= 60:
+    grade = "C"
+else:
+    grade = "D"
+print(grade)
+```
+
+```python
+# Logical operators
+age = 20
+attendance = 82
+has_id_card = False
+
+if age >= 18 and attendance >= 75:
+    print("Eligible for exam")
+
+if age < 18 or attendance < 75:
+    print("Needs special approval")
+
+if not has_id_card:
+    print("ID card is missing")
+```
+
+### Expected Output
+
+```text
+Conditional Statements Demo
+---------------------------
+1) Basic if statement
+7 is positive
+
+2) if-else example
+Temperature is below 0
+
+3) if-elif-else example
+Marks: 78, Grade: B
+
+4) Logical operators
+Using 'and': Eligible for exam
+Using 'or': No special approval needed
+Using 'not': ID card is missing
+```
+
