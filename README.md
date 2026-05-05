@@ -1319,3 +1319,63 @@ After (clear names) average_score = 87.5
 result_status = pass
 ```
 
+## PR Section: Proper Code Structure for Readability and Reuse
+
+### Script Location
+
+- `code_structure_demo.py` (project root)
+
+### Why Structure Matters (Short)
+
+- A clean structure makes code easier to read, review, and maintain.
+- It helps contributors quickly find setup, logic, and execution flow.
+
+### Reuse Through Functions (Short)
+
+- Repeated logic is moved into reusable functions.
+- Functions can be called with different inputs without rewriting code.
+
+### Separation of Logic and Execution (Short)
+
+- **Setup section:** variables and constants
+- **Function section:** reusable logic
+- **Main execution section:** runs workflow and prints results
+
+### Structure Snapshot
+
+```python
+# Imports
+from typing import List
+
+# Setup
+student_scores = [78, 85, 92, 88]
+passing_score = 80
+
+# Functions
+def calculate_average(scores: List[int]) -> float:
+    return sum(scores) / len(scores)
+
+def count_passing(scores: List[int], threshold: int) -> int:
+    return sum(1 for score in scores if score >= threshold)
+
+def main() -> None:
+    average_score = calculate_average(student_scores)
+    passing_count = count_passing(student_scores, passing_score)
+    print(average_score, passing_count)
+
+# Execution
+if __name__ == "__main__":
+    main()
+```
+
+### Expected Output
+
+```text
+Code Structure Demo
+-------------------
+Scores: [78, 85, 92, 88]
+Passing Threshold: 80
+Average Score: 85.75
+Passing Students: 3/4
+```
+
