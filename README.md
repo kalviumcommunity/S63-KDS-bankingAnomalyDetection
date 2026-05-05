@@ -1147,3 +1147,58 @@ Loop ended safely
 - A `while` loop can run forever if the condition never becomes false.
 - Avoid this by updating the loop variable (`count += 1`) or using a clear stop condition.
 
+## PR Section: Python Functions
+
+### Script Location
+
+- `functions_demo.py` (project root)
+
+### What Functions Are (Short)
+
+- Functions are reusable code blocks created using `def`.
+- They help avoid repetition and keep logic organized.
+
+### Parameters vs Arguments (Short)
+
+- **Parameters** are variables in the function definition.
+- **Arguments** are actual values passed during function call.
+
+### Code Snippets
+
+```python
+def show_welcome():
+    print("Welcome to the Python functions demo")
+
+def calculate_sum(a, b):
+    result = a + b
+    return result
+
+def check_even_odd(number):
+    if number % 2 == 0:
+        return "even"
+    return "odd"
+```
+
+```python
+show_welcome()                    # no parameters
+total = calculate_sum(12, 8)      # arguments: 12, 8
+print(total)
+print(check_even_odd(7))
+```
+
+### Expected Output
+
+```text
+Functions Demo
+--------------
+Welcome to the Python functions demo
+Sum of 12 and 8 is 20
+7 is odd
+Global variable example: functions_pr_demo
+```
+
+### Local vs Global Scope (Short)
+
+- `project_name` in the script is a **global variable** (available outside functions).
+- `result` inside `calculate_sum()` is a **local variable** (used only inside that function).
+
