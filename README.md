@@ -1379,3 +1379,71 @@ Average Score: 85.75
 Passing Students: 3/4
 ```
 
+## PR Section: NumPy Arrays from Python Lists
+
+### Script Location
+
+- `numpy_arrays_demo.py` (project root)
+
+### Why NumPy Arrays Over Python Lists (Short)
+
+- NumPy arrays are better for numeric work because arithmetic is direct and element-wise.
+- They also store shape and dtype clearly, which helps keep numeric data structured.
+
+### shape and dtype (Short)
+
+- `.shape` shows array dimensions (example: `(5,)`, `(2, 3)`).
+- `.dtype` shows element data type (example: `int64`).
+
+### Code Snippets
+
+```python
+import numpy as np
+
+python_list_1d = [1, 2, 3, 4, 5]
+array_1d = np.array(python_list_1d)
+
+python_list_2d = [[10, 20, 30], [40, 50, 60]]
+array_2d = np.array(python_list_2d)
+
+print(array_1d.shape, array_1d.dtype)
+print(array_2d.shape, array_2d.dtype)
+print(array_1d + 2)
+print(array_1d * 3)
+```
+
+```python
+# List vs NumPy behavior
+python_list_1d = [1, 2, 3, 4, 5]
+array_1d = np.array(python_list_1d)
+
+print(python_list_1d + [2])  # list concatenation
+print(array_1d + 2)          # element-wise addition
+```
+
+### Expected Output
+
+```text
+NumPy Arrays Demo
+-----------------
+1D Python list: [1, 2, 3, 4, 5]
+1D NumPy array: [1 2 3 4 5]
+1D array shape: (5,)
+1D array dtype: int64
+
+2D Python nested list: [[10, 20, 30], [40, 50, 60]]
+2D NumPy array:
+ [[10 20 30]
+ [40 50 60]]
+2D array shape: (2, 3)
+2D array dtype: int64
+
+Arithmetic on 1D NumPy array
+array_1d + 2 = [3 4 5 6 7]
+array_1d * 3 = [ 3  6  9 12 15]
+
+List vs NumPy behavior
+python_list_1d + [2] -> [1, 2, 3, 4, 5, 2]
+array_1d + 2 -> [3 4 5 6 7]
+```
+
